@@ -1,12 +1,17 @@
 class AddressesController < ApplicationController
-  def new
-
+  def index
+    @addresses = Address.all
   end
 
+  def new
+  end
+
+  def show
+    @address = Address.find(params[:id])
+  end
 
   def create
-
-  @address = Article.new(params.require(:adddress).permit(:street_address, :name, :city, :state, :zip))
+    @address = Address.new(params.require(:address).permit(:street_address, :name, :city, :state, :zip))
    
     @address.save
     redirect_to @address

@@ -1,0 +1,23 @@
+<h1>Address book</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th></th>
+  </tr>
+ 
+  <% @addresses.each do |address| %>
+    <tr>
+      <td><%= address.name %></td>
+      <td><%= address.street_address %></td>
+      <td><%= address.city %></td>
+      <td><%= address.state %></td>
+      <td><%= address.zip %></td>
+      <td><%= link_to 'Show', address_path(address) %></td>
+    </tr>
+  <% end %>
+</table>
